@@ -1,4 +1,4 @@
-.container {
+.body-container {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -47,6 +47,6 @@
     border-left: white 10px solid;
 }
 
-.div-ligne {
+.div-row {
     display: flex;
 }
