@@ -33,7 +33,7 @@ function fct_getContenuHtmlCategorie(pa_categories) {
         fs_contenuHtml += '\n<div class="link-container link-visible">';
 
         fs_contenuHtml += '\n<div class="title-container">';
-        fs_contenuHtml += '\n<h2>' + po_categorie.attributes[0].value + ' <span onclick="fct_afficherMasquerCategorie(this)"><img class="chevron-up" ></span></h2>';
+        fs_contenuHtml += '\n<h2>' + po_categorie.attributes[0].value + ' <span class="chevron-up" onclick="fct_afficherMasquerCategorie(this)"></span></h2>';
         fs_contenuHtml += '\n</div>';
 
         fs_contenuHtml += '\n<div class="content">';
