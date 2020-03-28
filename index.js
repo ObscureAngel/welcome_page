@@ -1,16 +1,16 @@
 var fs_contenuHtml = '';
 
 function fct_afficherMasquerCategorie(po_element) {
-    if ($(po_element).hasClass("glyphicon-chevron-down")) {
-        $(po_element).removeClass("glyphicon-chevron-down");
-        $(po_element).addClass("glyphicon-chevron-up");
+    if ($(po_element).hasClass("chevron-down")) {
+        $(po_element).removeClass("chevron-down");
+        $(po_element).addClass("chevron-up");
 
         $(po_element).parents("div.link-container").removeClass("link-hidden");
         $(po_element).parents("div.link-container").addClass("link-visible");
     }
     else {
-        $(po_element).removeClass("glyphicon-chevron-up");
-        $(po_element).addClass("glyphicon-chevron-down");
+        $(po_element).removeClass("chevron-up");
+        $(po_element).addClass("chevron-down");
 
         $(po_element).parents("div.link-container").removeClass("link-visible");
         $(po_element).parents("div.link-container").addClass("link-hidden");
@@ -33,7 +33,7 @@ function fct_getContenuHtmlCategorie(pa_categories) {
         fs_contenuHtml += '\n<div class="link-container link-visible">';
 
         fs_contenuHtml += '\n<div class="title-container">';
-        fs_contenuHtml += '\n<h2>' + po_categorie.attributes[0].value + ' <span class="glyphicon glyphicon-chevron-up" onclick="fct_afficherMasquerCategorie(this)"></span></h2>';
+        fs_contenuHtml += '\n<h2>' + po_categorie.attributes[0].value + ' <span onclick="fct_afficherMasquerCategorie(this)"><img class="chevron-up" ></span></h2>';
         fs_contenuHtml += '\n</div>';
 
         fs_contenuHtml += '\n<div class="content">';

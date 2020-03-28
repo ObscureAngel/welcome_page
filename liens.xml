@@ -7,6 +7,11 @@
                 <titre>Qwant</titre>
                 <description>Moteur de recherche</description>
             </lien>
+            <lien ligne="0">
+                <url>https://www.qwant.com</url>
+                <titre>Qwant2</titre>
+                <description>Moteur de recherche</description>
+            </lien>
         </liens>
     </categorie>
     <categorie titre="Un titre" ligne="0">
