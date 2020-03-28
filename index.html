@@ -1,119 +1,40 @@
 <html lang="fr"></html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+            method: "GET",
+            url: "liens.xml",
+            datatype: "xml",
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log('Error: ' + errorThrown);
+            },
+            success: function(xml) {
+                var fs_contenuHtml = '';
+                var fa_categories = Array.from(xml.getElementsByTagName("categories")[0].children);
+                fs_contenuHtml += fct_getContenuHtmlCategorie(fa_categories);
+                //console.log(fa_categories);
+
+                console.log(fs_contenuHtml);
+                document.getElementById('xml-content').innerHTML = fs_contenuHtml;
+            }
+        });
+    </script>
     <title>Accueil</title>
 </head>
 <body>
     <!-- Conteneur général de la page -->
     <div class="body-container">
-        <!-- #region Titre de la page -->
+        <!-- Titre de la page -->
         <div class="head-container">
             <h1>Accueil</h1>
         </div>
-        <!-- #endregion -->
-        <!-- Copier la classe div-row pour créer une nouvelle ligne -->
-        <div class="div-row">
-            <!-- #region Conteneur de liens (à copier pour créer un nouveau conteneur) -->
-            <div class="link-container link-visible">
-                <div class="title-container">
-                    <h2>Titre</h2>
-                </div>
-                <div class="content">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>                            
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <!-- #endregion -->
-            <!-- #region Conteneur de liens -->
-            <div class="link-container link-visible">
-                <div class="title-container">
-                    <h2>Titre</h2>
-                </div>
-                <div class="content">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>                            
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <!-- #endregion -->
-        </div>
-        <div class="div-row">
-            <!-- #region Conteneur de liens -->
-            <div class="link-container link-visible">
-                <div class="title-container">
-                    <h2>Titre</h2>
-                </div>
-                <div class="content">
-                    <table>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>                            
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                            <td>
-                                <a href="#" target="_blank">Lien</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <!-- #endregion -->
+        
+        <div id="xml-content">
+
         </div>
     </div>
 </body>

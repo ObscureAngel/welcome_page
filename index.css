@@ -25,6 +25,7 @@
     padding-left: 2px;
     padding-bottom: 2px;
     padding-right: 2px;
+    height: max-content;
 }
 
 .link-container > .title-container > h2 {
@@ -38,6 +39,7 @@
     background-color: #b32d00;
     color: whitesmoke;
     border-left: black 4px solid;
+    vertical-align: middle !important;
 }
 
 .link-container {
@@ -49,4 +51,8 @@
 
 .div-row {
     display: flex;
+}
+
+.title-container > h2 > span {
+    font-size: 20px;
 }
