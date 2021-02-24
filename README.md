@@ -1,1 +1,1 @@
-aro_welcome_page
+welcome_page
