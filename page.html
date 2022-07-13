@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<link rel="stylesheet" type="text/css" href="page.css">
+	<script src="liens.js"></script>
+	<script src="page.js"></script>
+	<title>Accueil</title>
+</head>
+<body>
+	<!-- Conteneur général de la page -->
+	<div class="body-container">
+		<!-- Titre de la page -->
+		<div class="head-container">
+			<h1>Accueil</h1>
+		</div>
+
+		<div id="content">
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById('content').innerHTML = fct_getContenuHtmlCategorie(lo_jsonData.categories);
+	</script>
+</body>
+</html>
