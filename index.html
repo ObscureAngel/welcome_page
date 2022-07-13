@@ -1,39 +1,31 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="jquery-3.4.1.min.js"></script>
-    <script src="index.js"></script>
-    <script type="text/javascript">
-        $.ajax({
-            method: "GET",
-            url: "liens.xml",
-            datatype: "xml",
-            error: function(jqXHR, textStatus, errorThrown) {
-                console.log('Error: ' + errorThrown);
-            },
-            success: function(xml) {
-                var fs_contenuHtml = '';
-                var fa_categories = Array.from(xml.getElementsByTagName("categories")[0].children);
-                fs_contenuHtml += fct_getContenuHtmlCategorie(fa_categories);
+	<title>Ajout accueil</title>
+	<meta charset="UTF-8">
+	<script src="liens.js"></script>
+	<script>
 
-                document.getElementById('xml-content').innerHTML = fs_contenuHtml;
-            }
-        });
-    </script>
-    <title>Accueil</title>
+	</script>
 </head>
 <body>
-    <!-- Conteneur général de la page -->
-    <div class="body-container">
-        <!-- Titre de la page -->
-        <div class="head-container">
-            <h1>Accueil</h1>
-        </div>
+	<form action="" method="post">
+		<label for="us_urlLien">Lien à ajouter</label>
+		<input type="url" name="us_urlLien" id="us_urlLien">
 
-        <div id="xml-content">
+		<label for="us_titreLien">Titre</label>
+		<input type="text" name="us_titreLien" id="us_titreLien">
 
-        </div>
-    </div>
+		<label for="us_descriptionLien">Description</label>
+		<input type="text" name="us_descriptionLien" id="us_descriptionLien">
+
+		<label for="us_categorieLien">Catégorie</label>
+		<select name="us_categorieLien" id="us_categorieLien">
+			
+		</select><br />
+
+		<label for="us_ligneLien">Ligne</label>
+		<input type="number" min="0" name="us_ligneLien" id="us_ligneLien">
+	</form>
 </body>
 </html>
